@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+	id 'application'
+}
+
+group = 'io.javalin.samples.javalin5'
+version = '1.0.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+	implementation 'ch.qos.logback:logback-core:1.4.5'
+	implementation 'ch.qos.logback:logback-classic:1.4.5'
+	implementation 'org.slf4j:slf4j-api:2.0.6'
+
+	implementation 'org.eclipse.jetty:jetty-server:11.0.13'
+	implementation 'org.eclipse.jetty:jetty-xml:11.0.13'
+	implementation 'org.eclipse.jetty:jetty-webapp:11.0.13'
+
+	implementation ('io.javalin:javalin:5.3.2') {
+		exclude group: 'org.eclipse.jetty'
+		exclude group: 'org.eclipse.jetty.websocket'
+	}
+
+}
+
+application {
+	mainClass = 'io.javalin.samples.javalin5.jettyembed.JettyEmbedCmd'
+}
