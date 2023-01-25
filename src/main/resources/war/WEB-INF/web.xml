@@ -7,6 +7,10 @@
 	version="4.0"
 >
 
+	<listener>
+		<listener-class>io.javalin.samples.javalin5.jettyembed.javalin.JavalinServletContextListener</listener-class>
+	</listener>
+
 	<welcome-file-list>
 		<welcome-file>/index.html</welcome-file>
 	</welcome-file-list>
